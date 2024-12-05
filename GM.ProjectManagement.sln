@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F731FFE0-54E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{10F01B2B-7E3C-4C70-9B36-B5A54EBE109E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GM.ProjectManagement.Domain", "src\GM.ProjectManager.Domain\GM.ProjectManagement.Domain.csproj", "{EA97C53F-2D2D-4323-ADDA-064AB898CE1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GM.ProjectManagement.Domain", "src\GM.ProjectManagement.Domain\GM.ProjectManagement.Domain.csproj", "{EA97C53F-2D2D-4323-ADDA-064AB898CE1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GM.ProjectManagement.Infrastructure", "src\GM.ProjectManagement.Infrastructure\GM.ProjectManagement.Infrastructure.csproj", "{C491B68D-78C7-40D7-A175-0F0701898CCF}"
 EndProject
