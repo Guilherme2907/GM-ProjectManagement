@@ -16,8 +16,6 @@ public class ProjectMember : Entity
 
     public  Guid UserId { get; private set; }
 
-    public User User { get; private set; }
-
     public virtual IReadOnlyList<Project> Projects => _projects.AsReadOnly();
 
     public virtual IReadOnlyList<ProjectTask> Tasks => _tasks.AsReadOnly();
@@ -26,12 +24,12 @@ public class ProjectMember : Entity
 
     private readonly IList<ProjectTask> _tasks = [];
 
-    public ProjectMember(string name, string surName, ProjectMemberRole role, User user)
+    public ProjectMember(string name, string surName, ProjectMemberRole role, Guid userId)
     {
         Name = name;
         SurName = surName;
         Role = role;
-        User = user;
+        UserId = userId;
 
         Validate();
     }
@@ -47,8 +45,6 @@ public class ProjectMember : Entity
         DomainValidation.MaxLength(SurName, ValidationConstants.ProjectMember_MaxSurNameLength, nameof(SurName));
 
         DomainValidation.NotNull(Role, nameof(Role));
-
-        DomainValidation.NotNull(User, nameof(User));
     }
 
     public void Update(string name, string surname)
