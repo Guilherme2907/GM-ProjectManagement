@@ -14,19 +14,13 @@ public abstract class BaseFixture
      => _faker = new Faker("pt_BR");
 
 
-    public User GetUser()
-    {
-        return new(GetValidEmail(), GetValidPassword());
-    }
-
     public ProjectMember GetProjectMember(bool isAdmin = false)
     {
         return new
         (
             GetValidProjectMemberName(),
             GetValidProjectMemberSurname(),
-            isAdmin ? ProjectMemberRole.Admin : GetRandomStatusValue<ProjectMemberRole>(),
-            GetUser()
+            isAdmin ? ProjectMemberRole.Admin : GetRandomStatusValue<ProjectMemberRole>()
         );
     }
 

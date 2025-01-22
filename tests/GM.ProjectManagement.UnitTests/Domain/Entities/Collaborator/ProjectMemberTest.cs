@@ -2,9 +2,10 @@
 using GM.ProjectManagement.Domain.Enums;
 using GM.ProjectManagement.Domain.Exceptions;
 using GM.ProjectManagement.Domain.Validations;
+using GM.ProjectManagement.UnitTests.Domain.Entities.ProjectMember;
 using Entity = GM.ProjectManagement.Domain.Entities;
 
-namespace GM.ProjectManagement.UnitTests.Domain.Entities.ProjectMember;
+namespace GM.ProjectManagement.UnitTests.Domain.Entities.Collaborator;
 
 [Collection(nameof(ProjectMemberTestFixture))]
 public class ProjectMemberTest(ProjectMemberTestFixture fixture)
@@ -18,14 +19,12 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
         var name = _fixture.GetValidProjectMemberName();
         var surname = _fixture.GetValidProjectMemberSurname();
         var role = _fixture.GetRandomStatusValue<ProjectMemberRole>();
-        var user = _fixture.GetUser();
 
-        var projectMember = new Entity.ProjectMember(name, surname, role, user);
+        var projectMember = new Entity.ProjectMember(name, surname, role);
 
         projectMember.Should().NotBeNull();
         projectMember.Name.Should().Be(name);
         projectMember.SurName.Should().Be(surname);
-        projectMember.User.Should().Be(user);
         projectMember.Role.Should().Be(role);
     }
 
@@ -37,7 +36,7 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
     public void InstantiateErrorWhenNameIsNullOrEmpty(string invalidName)
     {
         Action action =
-        () => new Entity.ProjectMember(invalidName, _fixture.GetValidProjectMemberSurname(), _fixture.GetRandomStatusValue<ProjectMemberRole>(), _fixture.GetUser());
+        () => new Entity.ProjectMember(invalidName, _fixture.GetValidProjectMemberSurname(), _fixture.GetRandomStatusValue<ProjectMemberRole>());
 
         action.Should()
             .Throw<EntityValidationException>()
@@ -51,7 +50,7 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
         var invalidName = _fixture.GetValidProjectMemberName()[..(ValidationConstants.ProjectMember_MinNameLength - 1)];
 
         Action action =
-            () => new Entity.ProjectMember(invalidName, _fixture.GetValidProjectMemberSurname(), _fixture.GetRandomStatusValue<ProjectMemberRole>(), _fixture.GetUser());
+            () => new Entity.ProjectMember(invalidName, _fixture.GetValidProjectMemberSurname(), _fixture.GetRandomStatusValue<ProjectMemberRole>());
 
         action.Should()
             .Throw<EntityValidationException>()
@@ -70,7 +69,7 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
         }
 
         Action action =
-            () => new Entity.ProjectMember(invalidName, _fixture.GetValidProjectMemberSurname(), _fixture.GetRandomStatusValue<ProjectMemberRole>(), _fixture.GetUser());
+            () => new Entity.ProjectMember(invalidName, _fixture.GetValidProjectMemberSurname(), _fixture.GetRandomStatusValue<ProjectMemberRole>());
 
         action.Should()
             .Throw<EntityValidationException>()
@@ -85,7 +84,7 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
     public void InstantiateErrorWhenSurnameIsNullOrEmpty(string invalidSurname)
     {
         Action action =
-        () => new Entity.ProjectMember(_fixture.GetValidProjectMemberName(), invalidSurname, _fixture.GetRandomStatusValue<ProjectMemberRole>(), _fixture.GetUser());
+        () => new Entity.ProjectMember(_fixture.GetValidProjectMemberName(), invalidSurname, _fixture.GetRandomStatusValue<ProjectMemberRole>());
 
         action.Should()
             .Throw<EntityValidationException>()
@@ -99,7 +98,7 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
         var invalidSurname = _fixture.GetValidProjectMemberName()[..(ValidationConstants.ProjectMember_MinSurNameLength - 1)];
 
         Action action =
-            () => new Entity.ProjectMember(_fixture.GetValidProjectMemberName(), invalidSurname, _fixture.GetRandomStatusValue<ProjectMemberRole>(), _fixture.GetUser());
+            () => new Entity.ProjectMember(_fixture.GetValidProjectMemberName(), invalidSurname, _fixture.GetRandomStatusValue<ProjectMemberRole>());
 
         action.Should()
             .Throw<EntityValidationException>()
@@ -118,7 +117,7 @@ public class ProjectMemberTest(ProjectMemberTestFixture fixture)
         }
 
         Action action =
-            () => new Entity.ProjectMember(_fixture.GetValidProjectMemberName(), invalidSurname, _fixture.GetRandomStatusValue<ProjectMemberRole>(), _fixture.GetUser());
+            () => new Entity.ProjectMember(_fixture.GetValidProjectMemberName(), invalidSurname, _fixture.GetRandomStatusValue<ProjectMemberRole>());
 
         action.Should()
             .Throw<EntityValidationException>()
