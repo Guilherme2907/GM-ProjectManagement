@@ -3,8 +3,6 @@ using GM.ProjectManagement.Domain.Enums;
 using GM.ProjectManagement.Domain.Exceptions;
 using GM.ProjectManagement.Domain.SeedWork;
 using GM.ProjectManagement.Domain.Validations;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GM.ProjectManagement.Domain.Entities;
 
