@@ -369,3 +369,4 @@ gcp_credentials.json
 elastic/.docker/es*
 .docker/filebeat/registry/*
 .docker/filebeat/meta.json
+/src/presentation/GM.ProjectManagement.Api/appsettings.Development.json
