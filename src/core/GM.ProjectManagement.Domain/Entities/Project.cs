@@ -110,7 +110,7 @@ public class Project : Entity
         ValidateIfProjectCanBeUpdated();
 
         if (HasProjectMember(projectMember))
-            throw new EntityValidationException($"ProjectMember {projectMember.Name} is already member of this project");
+            throw new EntityValidationException($"ProjectMember {projectMember.Id} is already member of this project");
 
         if (ProjectMembers.Count == ValidationConstants.Project_MaxProjectMembers)
             throw new EntityValidationException($"Project {Name} has already reached the maximum number of members");
@@ -125,10 +125,10 @@ public class Project : Entity
         ValidateIfProjectCanBeUpdated();
 
         if (!HasProjectMember(projectMember))
-            throw new EntityValidationException($"ProjectMember {projectMember.Name} does not is member of this project");
+            throw new EntityValidationException($"ProjectMember {projectMember.Id} does not is member of this project");
 
         if (Tasks.Any(t => t.ProjectMemberId == projectMember.Id))
-            throw new EntityValidationException($"The ProjectMember {projectMember.Name} cannot be removed because has one or more related tasks");
+            throw new EntityValidationException($"The ProjectMember {projectMember.Id} cannot be removed because has one or more related tasks");
 
         _ProjectMembers.Remove(projectMember);
     }

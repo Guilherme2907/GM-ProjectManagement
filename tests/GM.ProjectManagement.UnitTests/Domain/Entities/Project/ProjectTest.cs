@@ -435,7 +435,7 @@ public class ProjectTest(ProjectTestFixture fixture)
 
         action.Should()
             .Throw<EntityValidationException>()
-            .WithMessage($"ProjectMember {projectMember.Name} is already member of this project");
+            .WithMessage($"ProjectMember {projectMember.Id} is already member of this project");
     }
 
     [Fact(DisplayName = nameof(AddProjectMemberErrorWhenProjectHasMaxProjectMembersAlready))]
@@ -454,7 +454,7 @@ public class ProjectTest(ProjectTestFixture fixture)
 
         action.Should()
             .Throw<EntityValidationException>()
-            .WithMessage($"The ProjectMember {projectMember.Name} cannot be removed because has one or more related tasks");
+            .WithMessage($"The ProjectMember {projectMember.Id} cannot be removed because has one or more related tasks");
     }
 
     [Fact(DisplayName = nameof(RemoveProjectMember))]
@@ -500,7 +500,7 @@ public class ProjectTest(ProjectTestFixture fixture)
 
         action.Should()
         .Throw<EntityValidationException>()
-            .WithMessage($"ProjectMember {projectMember.Name} does not is member of this project");
+            .WithMessage($"ProjectMember {projectMember.Id} does not is member of this project");
     }
 
     [Fact(DisplayName = nameof(RemoveProjectMemberErrorWhenProjectMemberHasOneOrMoreTaksRelated))]

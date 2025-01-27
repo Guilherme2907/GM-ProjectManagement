@@ -18,9 +18,8 @@ public abstract class BaseFixture
     {
         return new
         (
-            GetValidProjectMemberName(),
-            GetValidProjectMemberSurname(),
-            isAdmin ? ProjectMemberRole.Admin : GetRandomStatusValue<ProjectMemberRole>()
+            isAdmin ? ProjectMemberRole.Admin : GetRandomStatusValue<ProjectMemberRole>(),
+            Guid.NewGuid()
         );
     }
 

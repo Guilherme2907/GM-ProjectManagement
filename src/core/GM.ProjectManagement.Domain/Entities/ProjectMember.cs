@@ -6,10 +6,6 @@ namespace GM.ProjectManagement.Domain.Entities;
 
 public class ProjectMember : Entity
 {
-    public string Name { get; private set; }
-
-    public string SurName { get; private set; }
-
     public bool IsActive { get; private set; } = true;
 
     public ProjectMemberRole Role { get; private set; }
@@ -24,10 +20,8 @@ public class ProjectMember : Entity
 
     private readonly IList<ProjectTask> _tasks = [];
 
-    public ProjectMember(string name, string surName, ProjectMemberRole role, Guid userId)
+    public ProjectMember(ProjectMemberRole role, Guid userId)
     {
-        Name = name;
-        SurName = surName;
         Role = role;
         UserId = userId;
 
@@ -36,23 +30,7 @@ public class ProjectMember : Entity
 
     private void Validate()
     {
-        DomainValidation.NotNullOrEmpty(Name, nameof(Name));
-        DomainValidation.MinLength(Name, ValidationConstants.ProjectMember_MinNameLength, nameof(Name));
-        DomainValidation.MaxLength(Name, ValidationConstants.ProjectMember_MaxNameLength, nameof(Name));
-
-        DomainValidation.NotNullOrEmpty(SurName, nameof(SurName));
-        DomainValidation.MinLength(SurName, ValidationConstants.ProjectMember_MinSurNameLength, nameof(SurName));
-        DomainValidation.MaxLength(SurName, ValidationConstants.ProjectMember_MaxSurNameLength, nameof(SurName));
-
         DomainValidation.NotNull(Role, nameof(Role));
-    }
-
-    public void Update(string name, string surname)
-    {
-        Name = name;
-        SurName = surname;
-
-        Validate();
     }
 
     public void Activate()
