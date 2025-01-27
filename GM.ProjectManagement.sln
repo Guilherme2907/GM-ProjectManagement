@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GM.ProjectManagement.UnitTests", "tests\GM.ProjectManagement.UnitTests\GM.ProjectManagement.UnitTests.csproj", "{A7E70D5D-8B45-4605-9D65-5F6C4FE3F6CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GM.ProjectManagement.Infrastructure.Auth.Keycloack", "src\infrastructure\GM.ProjectManagement.Infrastructure.Auth.Keycloack\GM.ProjectManagement.Infrastructure.Auth.Keycloack.csproj", "{33604EEA-32BF-4009-964F-7807BD03BE02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{A7E70D5D-8B45-4605-9D65-5F6C4FE3F6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E70D5D-8B45-4605-9D65-5F6C4FE3F6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E70D5D-8B45-4605-9D65-5F6C4FE3F6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33604EEA-32BF-4009-964F-7807BD03BE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33604EEA-32BF-4009-964F-7807BD03BE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33604EEA-32BF-4009-964F-7807BD03BE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33604EEA-32BF-4009-964F-7807BD03BE02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{98851A60-99BC-4C9B-81D0-3AE35ABB378F} = {F731FFE0-54EA-4AF3-A3CB-393CD92DE372}
 		{7851C407-34CD-4031-9F8B-E16949AF838B} = {F731FFE0-54EA-4AF3-A3CB-393CD92DE372}
 		{A7E70D5D-8B45-4605-9D65-5F6C4FE3F6CA} = {10F01B2B-7E3C-4C70-9B36-B5A54EBE109E}
+		{33604EEA-32BF-4009-964F-7807BD03BE02} = {98851A60-99BC-4C9B-81D0-3AE35ABB378F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28A71777-4D89-4DD6-B5BD-7D3434E7AAAB}

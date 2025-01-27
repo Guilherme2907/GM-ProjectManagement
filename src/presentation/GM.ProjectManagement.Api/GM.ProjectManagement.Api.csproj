@@ -10,12 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="9.0.0" />
+    <PackageReference Include="RestEase" Version="1.6.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\core\GM.ProjectManagement.Application\GM.ProjectManagement.Application.csproj" />
+    <ProjectReference Include="..\..\infrastructure\GM.ProjectManagement.Infrastructure.Auth.Keycloack\GM.ProjectManagement.Infrastructure.Auth.Keycloack.csproj" />
   </ItemGroup>
 
 </Project>
